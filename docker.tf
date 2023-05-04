@@ -123,3 +123,6 @@ resource "aws_instance" "ec2_instance1" {
     Name = "Docker-server"
   }
 }
+# print the url of the jenkins server
+output "docker_ipaddress"{
+  value     =join("",["http://",aws_instance.ec2_instance1.public_ip])
